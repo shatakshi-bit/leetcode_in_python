@@ -6,11 +6,11 @@ class Solution:
         for i in range(l):
             if listt[l-i-1].isalnum():
                 ns=ns+listt[l-i-1].lower()
-            if listt[i].isalnum():
-                nt=nt+listt[i].lower()
-        print(ns)
-        print(nt)
-        if ns==nt:
+            # if listt[i].isalnum():
+            #     nt=nt+listt[i].lower()
+        # print(ns)
+        # print(nt)
+        if ns==ns[::-1]:
             return True
         else:
             return False
