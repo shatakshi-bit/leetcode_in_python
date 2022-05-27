@@ -1,12 +1,12 @@
 class Solution:
     def numberOfSteps(self, num: int) -> int:
         c=0
-        while num:
-            if (num & 1)==0:
-                num=num>>1
+        while(num!=0):
+            if num%2==0:
+                num=num//2
+                c=c+1
             else:
                 num-=1
-            c+=1
+                c=c+1
         return c
-        
         
