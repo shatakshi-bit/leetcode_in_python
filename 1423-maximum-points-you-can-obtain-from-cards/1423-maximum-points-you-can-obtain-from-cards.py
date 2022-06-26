@@ -4,10 +4,10 @@ class Solution:
         total=sum(cardPoints[r:])
         res=total
         while r<len(cardPoints):
-                total+=(cardPoints[l]-cardPoints[r])
-                res=max(res,total)
-                l+=1
-                r+=1
+            total+=(cardPoints[l]-cardPoints[r])
+            res=max(res,total)
+            l+=1
+            r+=1
         return res
                 
                 
