@@ -8,3 +8,10 @@ class Solution:
             heappop(heap)
         return heappop(heap)
         
+        # heap=[]
+        # for i in nums:
+        #     heappush(heap,i)
+        # for i in range(k-1):
+        #     heappop(heap)
+        # return heappop(heap)
+        
