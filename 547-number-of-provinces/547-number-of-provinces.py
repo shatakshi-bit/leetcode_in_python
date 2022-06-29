@@ -3,7 +3,7 @@ class Solution:
         provinces = 0
         visited = set()
     
-        def dfs(node: int):
+        def dfs(node):
             if node in visited:
                 return
             visited.add(node)
