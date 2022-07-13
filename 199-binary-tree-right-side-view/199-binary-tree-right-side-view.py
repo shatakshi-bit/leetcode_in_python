@@ -6,20 +6,25 @@
 #         self.right = right
 class Solution:
     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
-        if not root:
-            return []
-        q = deque([root])
-        ans = []
-        while q:
-            length = len(q)
-            ans.append(q[-1].val)
-            for _ in range(length):
-                node = q.popleft()
-                if node.left:
-                    q.append(node.left)
-                if node.right:
-                    q.append(node.right)
-        return ans
+       #BFS solution
+        
+        if not root: return []
+        
+        ans = {}   #store the right-most value in each level
+        queue = [(root, 0)]   #queue contains current vertex and level
+        
+        #Do the BFS
+        while(queue):
+            node, level = queue.pop(0)
+            ans[level] = node.val       #for each level, right child will override the left child
+            
+            if node.left:
+                queue.append((node.left, level + 1))
+            if node.right:
+                queue.append((node.right, level + 1))
+            
+        return ans.values()
+    
 
            
            
