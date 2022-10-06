@@ -28,14 +28,26 @@ class Solution:
         #     dp[i]=max(dp[i-1],dp[i-2]+nums[i])
         # return dp[-1]
         
-        prev=0
-        cur=0
-        for num in nums:
-            temp=prev
-            prev=cur
-            cur=max(num+temp,prev)
-        return cur
+        # prev=0
+        # cur=0
+        # for num in nums:
+        #     temp=prev
+        #     prev=cur
+        #     cur=max(num+temp,prev)
+        # return cur
         
+        n=len(nums)
+        prev=nums[0]
+        prev2=0
+        for i in range(1,n):
+            take=nums[i]
+            if i>1:
+                take+=prev2
+            nottake=0+prev
+            curi=max(take,nottake)
+            prev2=prev
+            prev=curi
+        return prev        
         
     
        
