@@ -1,5 +1,7 @@
 class Solution:
     def addBinary(self, a: str, b: str) -> str:
+        #TC--->O(N+M)
+        #SC--->O(1)
         alen=len(a)
         blen=len(b)
         i=0
