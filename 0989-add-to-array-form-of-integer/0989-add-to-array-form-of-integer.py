@@ -24,8 +24,8 @@ class Solution:
             k=k//10
             k+=carry
             i=i+1
-            
-        return num[::-1]
+        num.reverse()   
+        return num
         
             
          
