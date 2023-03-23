@@ -1,20 +1,37 @@
 class Solution:
     def minScore(self, n: int, roads: List[List[int]]) -> int:
-        graph = defaultdict(dict)
-        for u, v, w in roads:
-            graph[u][v] = graph[v][u] = w
+        #TC-->O(E+V)
+#         adj=defaultdict(list)
+#         for src,dst,distance in roads:
+#             adj[src].append((dst,dist))
+#             adj[dst].append((src,dist))
         
-        min_score = float('inf')
-        visited = set()
-        queue = deque([1])
-
-        while queue:
-            node = queue.popleft()
-            for adj, score in graph[node].items():
-                if adj not in visited:
-                    queue.append(adj)
-                    visited.add(adj)
-                min_score = min(min_score, score)
-                
-        return min_score
-           
+#         def dfs(i):
+#             if i in visited:
+#                 return
+#             visited.add(i)
+#             for nei,dist in adj[i]:
+#                 self.res=min(self.res,dist)
+#                 dfs(nei)
+#         self.res=float("inf")   
+#         visited=set()
+#         dfs(1)
+#         return self.res
+        
+        h=defaultdict(list)
+        for i,j,k in roads:
+            h[i].append((j,k))
+            h[j].append((i,k))
+        def dfs(i):
+            if i in visit:
+                return
+            visit.add(i)
+            for nei,dist in h[i]:
+                self.res=min(self.res,dist)
+                dfs(nei)
+        visit=set()
+        self.res=float("inf")
+        dfs(1)
+        return self.res
+            
+            
